@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap");
+
+@layer components {
+  .container-primary {
+    @apply container flex flex-col h-screen p-2;
+  }
+
+  .message {
+    @apply max-w-[70%] md:max-w-[50%] mb-4;
+  }
+
+  .message > p {
+    @apply rounded-lg p-4;
+  }
+
+  .message > p {
+    @apply border-2 border-indigo-200 px-4 py-4 rounded-lg;
+  }
+
+  .my_message {
+    @apply w-max ml-auto;
+  }
+
+  .my_message > p {
+    @apply bg-blue-300 text-white border-none;
+  }
+  .message > span {
+    @apply float-right;
+  }
+
+  input {
+    @apply focus:outline-none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    @apply border-2 border-indigo-200 rounded-lg px-6 py-4 focus:bg-indigo-50 hover:bg-indigo-50 transition;
+  }
+
+  button[type="submit"],
+  button[type="button"] {
+    @apply px-5 py-4 border-2 rounded-lg  border-blue-200 hover:bg-blue-300 hover:text-white transition-colors ease-in-out;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Typography */
+@layer base {
+  html {
+    @apply text-slate-600;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-xl font-bold;
+  }
+
+  a {
+    @apply font-bold hover:text-orange-300 transition;
+  }
+
+  button {
+    @apply font-bold;
+  }
 }
