@@ -1,20 +1,32 @@
 import React from 'react'
 import SendMessageForm from '../components/forms/SendMessageForm'
 import MessageList from '../components/lists/MessageList'
+import { getAuth, signOut } from 'firebase/auth'
 
 const HomePage = () => {
+
+  const logout = () => {
+    const auth = getAuth();
+    signOut(auth)
+    localStorage.removeItem('uid')
+  }
+
   return (
     <>
-      <header>
-        <h1>Real-time chat on React.js</h1>
-      </header>
       <main
         className='grow overflow-auto'
       >
         <MessageList />
       </main>
-      <footer>
+      <footer
+        className='flex flex-col'
+      >
         <SendMessageForm />
+        <button
+                type='button'
+                className='text-orange-600 border-none hover:text-orange-700 transition py-4'
+                onClick={logout}
+            >Выйти</button>
       </footer>
     </>
   )

@@ -14,6 +14,9 @@ const HomeLayout = () => {
       <div
         className="container-primary gap-6 w-full sm:w-9/12 md:w-6/12"
       >
+        <header>
+          <h1>Real-time chat on React.js</h1>
+        </header>
         <MessageProvider>
           <Outlet />
         </MessageProvider>

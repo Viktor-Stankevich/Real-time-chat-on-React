@@ -1,6 +1,5 @@
 import React from 'react'
 import { useMessage } from '../../hooks/useMessage'
-import { useUser } from '../../hooks/useUser';
 
 const MessageList = () => {
 

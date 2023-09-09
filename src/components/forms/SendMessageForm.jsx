@@ -1,7 +1,6 @@
 import React from 'react'
 import { useMessage } from '../../hooks/useMessage'
 import { useSubmitForm } from '../../hooks/useSubmitForm';
-import { useUser } from '../../hooks/useUser';
 
 const SendMessageForm = () => {
 
@@ -20,6 +19,7 @@ const SendMessageForm = () => {
           name='message'
           placeholder='Your message'
           className='w-full'
+          autoFocus
       />
 
       <button
